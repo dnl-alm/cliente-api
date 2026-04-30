@@ -74,6 +74,39 @@ bash -c "mvn clean package -DskipTests && java -jar target/*.jar"
 
 ## 🧪 6. Testar a API
 
+### 🔍 Buscar todos os clientes
 ```bash
-curl http://localhost:8080
+curl -X GET http://localhost:8080/api/clientes
+```
+
+### 🔍 Buscar cliente por ID
+```bash
+curl -X GET http://localhost:8080/api/clientes/1
+```
+
+### ➕ Criar novo cliente
+```bash
+curl -X POST http://localhost:8080/api/clientes \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nome": "João Silva",
+    "idade": 25,
+    "cpf": "12345678901"
+  }'
+```
+
+### ✏️ Atualizar cliente
+```bash
+curl -X PUT http://localhost:8080/api/clientes/6 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nome": "João Atualizado",
+    "idade": 28,
+    "cpf": "12345678901"
+  }'
+```
+
+### ❌ Deletar cliente
+```bash
+curl -X DELETE http://localhost:8080/api/clientes/6
 ```
