@@ -28,7 +28,10 @@ cd cliente-api
 
 ---
 
-## 🗄️ 3. Subir o banco de dados (MySQL)
+## 🗄️ 3. Criar Volume e subir o banco de dados (MySQL)
+```bash
+docker volume create mysql-innovations-data
+```
 
 ```bash
 docker run --name mysql-innovations-rm563045 -d \
